@@ -1,0 +1,11 @@
+{
+  "name": "monorepo-webpack-desk",
+  "version": "1.0.0",
+  "scripts": {
+    "start": ""
+  },
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ]
+}
