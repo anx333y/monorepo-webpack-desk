@@ -15,7 +15,7 @@ export function buildPlugins({mode, paths, analyzer, platform}: BuildOptions): C
 	const plugins: Configuration['plugins'] = [
 		new HtmlWebpackPlugin({
 			template: paths.html,
-			favicon: path.resolve(paths.public, 'favicon.ico'),
+			// favicon: path.resolve(paths.public, 'favicon.ico'),
 			publicPath: '/'
 		}),
 		new DefinePlugin({
@@ -37,11 +37,11 @@ export function buildPlugins({mode, paths, analyzer, platform}: BuildOptions): C
 			filename: 'css/[name].[contenthash:8].css',
 			chunkFilename: 'css/[name].[contenthash:8].css',
 		}))
-		plugins.push(new CopyPlugin({
-			patterns: [
-				{ from: path.resolve(paths.public, 'locales'), to: path.resolve(paths.output, 'locales') },
-			],
-		}),)
+		// plugins.push(new CopyPlugin({
+		// 	patterns: [
+		// 		{ from: path.resolve(paths.public, 'locales'), to: path.resolve(paths.output, 'locales') },
+		// 	],
+		// }),)
 	}
 
 	if(analyzer) {
