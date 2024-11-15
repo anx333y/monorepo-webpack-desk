@@ -1,17 +1,7 @@
 {
-  "name": "testservice",
+  "name": "@packages/build-webpack",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "webpack build"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "@packages/build-webpack": "*"
-  },
+  "main": "./src/index.ts",
   "devDependencies": {
     "@types/node": "^22.9.0",
     "@types/webpack": "^5.28.5",
