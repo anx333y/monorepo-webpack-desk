@@ -1,4 +1,6 @@
-const buildLoaders = () => {
+import {RuleSetRule} from 'webpack';
+
+const buildLoaders = (): RuleSetRule[] => {
   return [
     {
       test: /\.css$/i,
