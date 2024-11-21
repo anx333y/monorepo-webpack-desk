@@ -15,7 +15,6 @@ const buildConfig = (options: Options): webpack.Configuration => {
         bundle: paths.entry
       },
     mode: mode || 'development',
-    devtool: isDev ? 'inline-source-map' : undefined,
     output: {
       filename: '[name].[contenthash].js',
       path: paths.output,
@@ -26,7 +25,8 @@ const buildConfig = (options: Options): webpack.Configuration => {
     },
     plugins: buildPlugins(options),
     resolve: buildResolvers(),
-    devServer: buildDevServer(options)
+    devtool: isDev ? 'inline-source-map' : undefined,
+    devServer: isDev ? buildDevServer(options) : undefined
   };
 };
 
