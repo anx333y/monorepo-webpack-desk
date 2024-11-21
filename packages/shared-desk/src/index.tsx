@@ -1,6 +1,6 @@
 import './index.scss';
 
-const Desk = (
+const Desk = () => (
   <>
     <div className={'test'}>
       <div>

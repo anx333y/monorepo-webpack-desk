@@ -1,5 +1,5 @@
 {
-  "name": "shared-desk",
+  "name": "@packages/shared-desk",
   "version": "1.0.0",
   "main": "./src/index.tsx",
   "dependencies": {
