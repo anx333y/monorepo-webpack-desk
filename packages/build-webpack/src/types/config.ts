@@ -3,7 +3,7 @@ export type Mode = 'development' | 'production';
 export interface Paths {
   entry: string;
   output: string;
-  html: string;
+  html?: string;
 };
 
 export interface Env {
@@ -15,5 +15,6 @@ export interface Options {
   mode: Mode;
   paths: Paths;
   port: number;
-  isDev: boolean;
+  isDev?: boolean;
+  isPackage?: boolean;
 }
