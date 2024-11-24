@@ -8,7 +8,7 @@ import buildDevServer from './devServer/buildDevServer';
 import {Options} from './types/config';
 
 const buildConfig = (options: Options): webpack.Configuration => {
-  const {mode, paths, isDev} = options;
+  const {mode, paths, isDev, isPackage} = options;
 
   return {
     entry: {
@@ -16,7 +16,7 @@ const buildConfig = (options: Options): webpack.Configuration => {
       },
     mode: mode || 'development',
     output: {
-      filename: '[name].[contenthash].js',
+      filename: isPackage ? 'index.js' : '[name].[contenthash].js',
       path: paths.output,
       clean: true
     },
