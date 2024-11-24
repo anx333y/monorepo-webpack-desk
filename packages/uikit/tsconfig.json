@@ -2,8 +2,12 @@
   "extends": "./../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "./dist/",
-    "declaration": true
+    "baseUrl": ".",
+    "lib": ["es6", "dom"],
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
   },
   "include": ["./src"],
-  "exclude": ["./dist"]
+  "exclude": ["./dist, ./.storybook"]
 }
