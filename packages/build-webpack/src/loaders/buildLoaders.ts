@@ -13,22 +13,23 @@ const buildLoaders = ({isDev}: Options): RuleSetRule[] => {
     {
       test: /\.s[ac]ss$/i,
       use: [
-        isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-        "css-loader",
-        "sass-loader",
-      ],
-      options: {
-        modules: {
-          mode: "local",
-          auto: true,
-          exportGlobals: true,
-          localIdentName: isDev ? "[path][name]__[local]" : "[hash:base64:5]",
-          localIdentHashSalt: "my-custom-hash",
-          namedExport: true,
-          exportLocalsConvention: "as-is",
-          exportOnlyLocals: false
+        {
+          loader: isDev ? "style-loader" : MiniCssExtractPlugin.loader
         },
-      }
+        {
+          loader: "css-loader",
+          options: {
+            modules: {
+              localIdentName: isDev ? "[folder]__[name]_[local]" : "[hash:base64:8]",
+              namedExport: false
+            },
+            sourceMap: isDev
+          }
+        },
+        {
+          loader: "sass-loader"
+        }
+      ]
     },
   ];
 };
